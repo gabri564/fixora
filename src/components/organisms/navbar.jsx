@@ -1,26 +1,62 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+
+import {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import {
   HiOutlineBars3,
   HiOutlineXMark,
 } from "react-icons/hi2";
 
+import Logo from "@/components/atoms/logo";
+
 const navLinks = [
   { name: "Inicio", href: "/" },
-  { name: "Soluciones", href: "/soluciones" },
-  { name: "Creative", href: "/creative" },
-  { name: "Software", href: "/software" },
-  { name: "Hardware", href: "/hardware" },
-  { name: "Proyectos", href: "/proyectos" },
-  { name: "Empresa", href: "/empresa" },
-  { name: "Contacto", href: "/contacto" },
+
+  {
+    name: "Soluciones",
+    href: "/soluciones",
+  },
+
+  {
+    name: "Creative",
+    href: "/creative",
+  },
+
+  {
+    name: "Software",
+    href: "/software",
+  },
+
+  {
+    name: "Hardware",
+    href: "/hardware",
+  },
+
+  {
+    name: "Proyectos",
+    href: "/proyectos",
+  },
+
+  {
+    name: "Empresa",
+    href: "/empresa",
+  },
+
+  {
+    name: "Contacto",
+    href: "/contacto",
+  },
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] =
+    useState(false);
 
   const menuRef = useRef(null);
 
@@ -30,7 +66,9 @@ export default function Navbar() {
     function handleClickOutside(event) {
       if (
         menuRef.current &&
-        !menuRef.current.contains(event.target)
+        !menuRef.current.contains(
+          event.target
+        )
       ) {
         setMenuOpen(false);
       }
@@ -76,7 +114,7 @@ export default function Navbar() {
             rounded-[2rem]
             border
             border-white/10
-            bg-white/55
+            bg-white/70
             px-8
             py-4
             shadow-[var(--shadow)]
@@ -86,57 +124,7 @@ export default function Navbar() {
         >
           {/* LOGO */}
 
-          <Link
-            href="/"
-            className="
-              flex
-              items-center
-              gap-3
-            "
-          >
-            <div
-              className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-2xl
-                bg-primary
-                text-lg
-                font-black
-                text-black
-                shadow-lg
-              "
-            >
-              F
-            </div>
-
-            <div className="flex flex-col">
-              <span
-                className="
-                  text-lg
-                  font-black
-                  tracking-[0.2em]
-                  text-foreground
-                "
-              >
-                FIXORA
-              </span>
-
-              <span
-                className="
-                  text-[11px]
-                  font-medium
-                  uppercase
-                  tracking-[0.25em]
-                  text-muted
-                "
-              >
-                Smart Technology
-              </span>
-            </div>
-          </Link>
+          <Logo />
 
           {/* NAV LINKS */}
 
@@ -189,7 +177,7 @@ export default function Navbar() {
               rounded-[1.8rem]
               border
               border-white/10
-              bg-white/55
+              bg-white/70
               px-5
               py-4
               shadow-[var(--shadow)]
@@ -199,61 +187,14 @@ export default function Navbar() {
           >
             {/* LOGO */}
 
-            <Link
-              href="/"
-              className="
-                flex
-                items-center
-                gap-3
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-11
-                  w-11
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-primary
-                  text-base
-                  font-black
-                  text-black
-                "
-              >
-                F
-              </div>
-
-              <div className="flex flex-col">
-                <span
-                  className="
-                    text-base
-                    font-black
-                    tracking-[0.18em]
-                    text-foreground
-                  "
-                >
-                  FIXORA
-                </span>
-
-                <span
-                  className="
-                    text-[10px]
-                    font-medium
-                    uppercase
-                    tracking-[0.2em]
-                    text-muted
-                  "
-                >
-                  Smart Tech
-                </span>
-              </div>
-            </Link>
+            <Logo />
 
             {/* MENU BUTTON */}
 
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() =>
+                setMenuOpen(!menuOpen)
+              }
               className="
                 flex
                 items-center
@@ -273,9 +214,13 @@ export default function Navbar() {
               "
             >
               {menuOpen ? (
-                <HiOutlineXMark size={24} />
+                <HiOutlineXMark
+                  size={24}
+                />
               ) : (
-                <HiOutlineBars3 size={24} />
+                <HiOutlineBars3
+                  size={24}
+                />
               )}
             </button>
           </nav>
@@ -292,7 +237,7 @@ export default function Navbar() {
                 rounded-[1.8rem]
                 border
                 border-white/10
-                bg-white/60
+                bg-white/80
                 p-3
                 shadow-[var(--shadow)]
                 backdrop-blur-2xl
@@ -310,7 +255,9 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() =>
+                      setMenuOpen(false)
+                    }
                     className="
                       rounded-2xl
                       px-4
