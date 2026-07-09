@@ -1,4 +1,5 @@
 import "./globals.css";
+import "react-photo-view/dist/react-photo-view.css";
 
 import Navbar from "@/components/organisms/navbar";
 import Footer from "@/components/organisms/footer";
@@ -27,11 +28,9 @@ export default function RootLayout({
         "
       >
         {/* NAVBAR */}
-
         <Navbar />
 
         {/* MAIN CONTENT */}
-
         <main
           className="
             relative
@@ -45,11 +44,9 @@ export default function RootLayout({
         </main>
 
         {/* FLOATING MENU */}
-
         <FloatingMenu />
 
         {/* FOOTER */}
-
         <Footer />
       </body>
     </html>
