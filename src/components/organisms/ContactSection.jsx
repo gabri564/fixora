@@ -32,7 +32,7 @@ const socialLinks = [
   {
     name: "WhatsApp",
     icon: FaWhatsapp,
-    url: "https://wa.me",
+    url: "https://wa.me/51987654321?text=Hola%20Fixora%2C%20me%20gustaría%20conocer%20más%20sobre%20sus%20servicios",
     bgColor: "bg-green-500",
   },
 ];
@@ -232,5 +232,6 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
+
   );
 }
