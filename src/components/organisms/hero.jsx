@@ -6,8 +6,10 @@ export default function Hero() {
       className="
         relative
         overflow-hidden
-        py-24
-        px-6
+        pt-32
+        pb-20
+        px-5
+        sm:px-6
       "
     >
       <div
@@ -17,43 +19,62 @@ export default function Hero() {
           max-w-6xl
           items-center
           gap-12
-          md:grid-cols-2
+          lg:grid-cols-2
         "
       >
-        {/* LEFT CONTENT */}
+        {/* LEFT */}
+
         <div>
-          <p className="text-primary font-semibold">
+
+          <p className="font-semibold text-primary">
             FIXORA
           </p>
 
           <h1
             className="
-              mt-3
-              text-4xl
+              mt-4
+              text-3xl
               font-bold
               leading-tight
-              md:text-5xl
+              sm:text-4xl
+              lg:text-5xl
             "
           >
             Tecnología moderna para hogares y empresas
           </h1>
 
-          <p className="mt-5 text-muted leading-7">
+          <p
+            className="
+              mt-5
+              text-muted
+              leading-7
+            "
+          >
             Optimización, soporte técnico y soluciones digitales
             para que tu equipo funcione al máximo rendimiento.
           </p>
 
-          {/* BUTTONS */}
-          <div className="mt-8 flex gap-4">
+          {/* BOTONES */}
+
+          <div
+            className="
+              mt-8
+              flex
+              flex-col
+              gap-4
+              sm:flex-row
+            "
+          >
             <button
               className="
+                w-full
                 rounded-xl
                 bg-primary
                 px-6
                 py-3
                 font-medium
                 text-white
-                hover:opacity-90
+                sm:w-auto
               "
             >
               Solicitar diagnóstico
@@ -61,27 +82,29 @@ export default function Hero() {
 
             <button
               className="
+                w-full
                 rounded-xl
                 border
                 border-border
                 px-6
                 py-3
                 font-medium
-                hover:bg-muted
+                sm:w-auto
               "
             >
               Ver servicios
             </button>
           </div>
 
-          {/* MINI STATS */}
+          {/* STATS */}
+
           <div
             className="
               mt-10
               grid
               grid-cols-2
-              gap-4
-              md:grid-cols-4
+              gap-6
+              sm:grid-cols-4
             "
           >
             <div>
@@ -104,10 +127,13 @@ export default function Hero() {
               <p className="text-sm text-muted">Soporte</p>
             </div>
           </div>
+
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* IMAGEN */}
+
         <div className="relative">
+
           <div
             className="
               absolute
@@ -125,12 +151,17 @@ export default function Hero() {
             height={600}
             className="
               relative
+              mx-auto
+              w-full
+              max-w-md
               rounded-3xl
               object-cover
               shadow-2xl
             "
           />
+
         </div>
+
       </div>
     </section>
   );
