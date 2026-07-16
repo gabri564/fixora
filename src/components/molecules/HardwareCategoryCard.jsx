@@ -1,13 +1,54 @@
-import Link from "next/link";
-import { FiArrowRight, FiCpu } from "react-icons/fi";
+"use client";
+
+import {
+  FiArrowRight,
+  FiBox,
+  FiCamera,
+  FiCpu,
+  FiGrid,
+  FiHardDrive,
+  FiHeadphones,
+  FiMonitor,
+  FiMousePointer,
+  FiServer,
+  FiWifi,
+  FiZap,
+} from "react-icons/fi";
+
+const icons = {
+  monitor: FiMonitor,
+  server: FiServer,
+  mouse: FiMousePointer,
+  cpu: FiCpu,
+  hardDrive: FiHardDrive,
+  zap: FiZap,
+  grid: FiGrid,
+  wifi: FiWifi,
+  camera: FiCamera,
+  headphones: FiHeadphones,
+  box: FiBox,
+};
 
 export default function HardwareCategoryCard({
-  icon: Icon = FiCpu,
+  iconName = "cpu",
   title,
   description,
-  href = "#catalogo-hardware",
+  targetId = "catalogo-hardware",
   buttonLabel = "Ver productos",
 }) {
+  const Icon = icons[iconName] || FiCpu;
+
+  const handleScroll = () => {
+    const section = document.getElementById(targetId);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <article className="group flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow)] transition duration-300 hover:-translate-y-2 hover:border-primary">
       <div>
@@ -24,13 +65,14 @@ export default function HardwareCategoryCard({
         </p>
       </div>
 
-      <Link
-        href={href}
-        className="mt-8 inline-flex items-center gap-2 font-bold text-primary transition hover:text-primary-hover"
+      <button
+        type="button"
+        onClick={handleScroll}
+        className="mt-8 inline-flex items-center gap-2 text-left font-bold text-primary transition hover:text-primary-hover"
       >
         {buttonLabel}
         <FiArrowRight className="transition group-hover:translate-x-1" />
-      </Link>
+      </button>
     </article>
   );
 }
